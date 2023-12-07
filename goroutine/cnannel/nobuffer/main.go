@@ -13,9 +13,13 @@ func main() {
 		fmt.Println("実行")
 		time.Sleep(5 * time.Second)
 		ch <- 10
+		ch <- 10
+		ch <- 10
+		ch <- 10
+		ch <- 10
+		fmt.Println("バッファなしは、受信側が受け取るまで送信側はブロックされる")
 	}()
 
-	// バッファなしチャネルは受信があるまで処理をブロッキングする
 	<-ch
 
 	fmt.Println("処理がきた")
