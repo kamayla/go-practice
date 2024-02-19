@@ -20,4 +20,5 @@ func main() {
 	signal.Notify(sigCh, os.Interrupt)
 
 	log.Println(<-sigCh)
+	timer.Stop()
 }
